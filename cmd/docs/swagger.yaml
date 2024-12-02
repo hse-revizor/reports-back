@@ -1,0 +1,39 @@
+basePath: /api/v1
+info:
+  contact: {}
+paths:
+  /reports/all:
+    get:
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Getting all the existing reports
+  /reports/one/{id}:
+    get:
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Getting a specific report
+swagger: "2.0"
